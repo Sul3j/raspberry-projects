@@ -1,3 +1,7 @@
+# VVC - 3.3V
+# DQ - GPIO 4 (z rezystorem 4.7kΩ do 3.3V)
+# GND - GND
+
 import os  # Moduł do wykonywania poleceń systemowych
 import glob  # Moduł do wyszukiwania plików w systemie
 import time  # Moduł do obsługi opóźnień w pętli
@@ -33,9 +37,7 @@ def read_temp(device_file):
         return temp_c  # Zwraca temperaturę jako liczbę zmiennoprzecinkową
 
 def main():
-    """
-    Funkcja główna programu: inicjalizuje czujnik i odczytuje temperaturę w pętli.
-    """
+    # Funkcja główna programu: inicjalizuje czujnik i odczytuje temperaturę w pętli.
     setup_1wire()  # Inicjalizacja magistrali 1-Wire
     device_file = get_device_file()  # Pobranie ścieżki do pliku czujnika
     
